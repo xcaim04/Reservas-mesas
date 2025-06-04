@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Delicias - Inicio</title>
+    <title>Restaurante Delicias - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="head">
+        <h1>Restaurante Delicias</h1>
+        <strong>Reserve su mesa para una experiencia culinaria inolvidable</strong>
+        <div>
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('reservar') }}">Reservar</a>
+        </div>
+
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Restaurante Delicias. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+{% block content %}
+
+<section class="top">
+    <a href="{{ url_for('reservar') }}" class="link">Reserve ahora</a>
+</section>
+
+<section class="container">
+    <h2>Nuestras Mesas</h2>
+    <div class="container-mesas">
+        {% for mesa in mesas %}
+        <div class="mesas {{ mesa.tipo_mesa.lower() }}">
+            <h3>{{ mesa.nombre }}</h3>
+            <p>Tipo: {{ mesa.tipo_mesa }}</p>
+            <p>Capacidad: {{ mesa.capacidad }} personas</p>
+            <p>Precio reserva: ${{ "%.2f"|format(mesa.precio_reserva) }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
